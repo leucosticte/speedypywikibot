@@ -3871,7 +3871,8 @@ class APISite(BaseSite):
                 % category.title())
         cmtitle = category.title(withSection=False).encode(self.encoding())
         cmargs = {'type_arg': "categorymembers", 'gcmtitle': cmtitle,
-                  'gcmprop': "ids|title|sortkey"}
+                  #'gcmprop': "ids|title|sortkey"}
+                  'gcmprop': "info"}
         if sortby in ["sortkey", "timestamp"]:
             cmargs["gcmsort"] = sortby
         elif sortby:
